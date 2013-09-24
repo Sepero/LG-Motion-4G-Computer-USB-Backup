@@ -13,7 +13,8 @@ cd $DIR
 
 sudo $ADB kill-server
 sudo $ADB start-server
-$ADB wait-for-device
+#$ADB wait-for-device
+sleep 2
 
 for i in persist persist-lg sns mpt tombstones firmware; do
 	echo "Unmounting $i"
