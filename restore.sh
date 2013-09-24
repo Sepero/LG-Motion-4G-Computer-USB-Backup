@@ -13,7 +13,8 @@ cd $DIR
 
 sudo $ADB kill-server
 sudo $ADB start-server
-$ADB wait-for-device
+#$ADB wait-for-device
+sleep 2
 
 $ADB forward tcp:$PORT tcp:$PORT || err "Could not forward ports to android device"
 echo "erasing /data"
@@ -28,6 +29,7 @@ done
 for i in cache data system; do
 	echo "pushing $i"
 	$ADB shell "cd /; /system/xbin/busybox nc -l -p $PORT | busybox tar -x"&
+	sleep 1
 	pbzip2 -dc "$i.tbz" | busybox nc localhost $PORT || err "Error pushing $i"
 done
 
