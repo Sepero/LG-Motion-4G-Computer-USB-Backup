@@ -5,4 +5,4 @@ Backup all partitions of the LG Motion 4G via USB to a Linux Computer
 
 Purpose?: Backs up all partitions, and does not require a micro sdcard.
 
-These scripts have been tested/verified to work. The backup script performs a md5sum to verify that your backups are not corrupted.
+These scripts have been tested/verified to work. The backup script performs a md5sum to verify that your backups are not corrupted. Location of the ADB binary should be modified in the script for your system.
